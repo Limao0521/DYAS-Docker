@@ -1,0 +1,14 @@
+# Ejercicio 1: Usando imagen propia de Docker Hub
+# Usuario: limao0521
+services:
+    web:
+        image: limao0521/friendlyhello
+        ports:
+            - "4000:80"
+    redis:
+        image: redis
+        ports:
+            - "6379:6379"
+        volumes:
+            - "./data:/data"
+        command: redis-server --appendonly yes

@@ -1,0 +1,14 @@
+# Ejercicio 2: Usando imagen de un compañero
+# Reemplaza 'username-companero' con el nombre de usuario de Docker Hub de tu compañero
+services:
+    web:
+        image: username-companero/friendlyhello
+        ports:
+            - "4000:80"
+    redis:
+        image: redis
+        ports:
+            - "6379:6379"
+        volumes:
+            - "./data:/data"
+        command: redis-server --appendonly yes
